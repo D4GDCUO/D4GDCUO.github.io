@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html oncontextmenu="return false">
+<html>
 <head>
-    <title>Destiend 4 Greateness</title>
- 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>D4G</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form id="infoForm">
+<!-- Destiend 4 Greateness-->
+<div class="bg-image"></div>
+<div class="bg-text">
+  <h1>Destiend 4 Greateness</h1>
+</div>
+<!-- Destiend 4 Greateness-->
+
+<!--Hex Info-->
+    <div class="contact-card">
+        <img src="hex.jpeg" alt="skull.jpg">
+        <div class="contact-details">
+            <h2>Mrs Hex</h2>
+            <p>League Leader</p>
+            <p>Discord: <span class="discord-username">.mrshex</span></p>
+        </div>
+    </div>
+<!--Hex Info end-->
+
+
+<!--Accordions info-->
+<div class="accordion">
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(1)">Rules</div>
+    <div class="accordion-content">Rules goes here</div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(2)">League MOTD</div>
+    <div class="accordion-content">League MOTD goes here</div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(3)">Skill points Guide </div>
+    <div class="accordion-content">Skill points Guide goes</div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(4)">Artifacts guide </div>
+    <div class="accordion-content">Artifacts guide goes here</div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(5)">Submit a feat request</div>
+    <div class="accordion-content">
+      <form id="infoForm">
         <label for="toonName">Toon Name</label>
         <input type="text" id="toonName" name="toonName" required><br><br>
  
@@ -66,10 +105,32 @@
             }
         });
     </script>
+    </div>
+  </div>
+</div>
+ 
+<script>
+// Function to toggle the accordion content
+function toggleAccordion(index) {
+  var accordionItem = document.getElementsByClassName("accordion-item")[index - 1];
+  accordionItem.classList.toggle("active");
+  var accordionContent = accordionItem.getElementsByClassName("accordion-content")[0];
+  accordionContent.style.display = accordionContent.style.display === "block" ? "none" : "block";
+}
+</script>
+<!--Accordions info End-->
+
+<!-- Footer-->
+<div class="footer">
+  <p>&copy; 2024 Destined 4 Greatness  by Jox All rights reserved.</p>
+</div>
+<!-- Footer-->
 </body>
 </html>
 
-<!--
-This are notes
--->
 
+<!--Need to do : 
+
+
+-->
+ 

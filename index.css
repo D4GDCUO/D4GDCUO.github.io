@@ -1,3 +1,144 @@
+    /* Add additional styles here if needed */
+    .contact-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+    }
+
+    .contact-card img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .contact-card h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .contact-card p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 5px;
+    }
+
+    .contact-card .discord-username {
+        font-weight: bold;
+        color: #00bfff;
+    }
+
+
+
+    
+/*  D4G */
+body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-image {
+    /* The image used */
+    background-image: url("dcuo.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+ /*  D4G */
+
+
+
+
+
+/* Style the accordion container */
+.accordion {
+    display: flex;
+  }
+   
+  /* Style the accordion item */
+  .accordion-item {
+    flex: 1;
+    margin-right: 10px;
+  }
+   
+  /* Style the accordion header */
+  .accordion-header {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+  }
+   
+  /* Style the accordion content */
+  .accordion-content {
+    padding: 10px;
+    display: none;
+  }
+   
+  /* Add a different background color to the active accordion header */
+  .active {
+    background-color: #ddd;
+  }
+
+
+
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+    .accordion-item {
+      flex-basis: calc(50% - 10px);
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .accordion-item {
+      flex-basis: calc(33.3333% - 10px);
+    }
+  }
+
+
+
+
+/*Form */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -72,4 +213,22 @@
     input[type="submit"] {
       padding: 8px;
     }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Footer styles */
+.footer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
   }
