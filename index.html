@@ -1,50 +1,75 @@
-<!DOCTYPE HTML>
-<html>
-    <title>
-             Destined 4 Greatness
-    </title>
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+    <title>Destiend 4 Greateness</title>
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
 <body>
-           <H3>this is a test h</H3>
-        <p> thias is a test p</p>
-
+    <form id="infoForm">
+        <label for="toonName">Toon Name</label>
+        <input type="text" id="toonName" name="toonName" required><br><br>
+ 
+        <label for="featName">Feat Name</label>
+        <input type="text" id="featName" name="featName" required><br><br>
+ 
+ 
+ 
+        <label for="webhook">Choose Run Type</label>
+        <select id="webhook" name="webhook" required>
+            <option value="duol">Duol</option>
+            <option value="alert">Alert</option>
+            <option value="raid">Raid</option>
+            <option value="openWorld">Open World</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+ 
+    <script>
+        $(document).ready(function() {
+            $("#infoForm").submit(function(event) {
+                event.preventDefault();
+ 
+                const toonName = $("#toonName").val();
+                const featName = $("#featName").val();
+                const webhook = $("#webhook").val();
+                const webhookUrl = getWebhookUrl(webhook);
+ 
+                const data = {
+                    "content": `**Toon Name:** ${toonName}\n **Feat Name:** ${featName}\n **Run:** ${webhook}`
+                };
+                $.ajax({
+                    type: "POST",
+                    url: webhookUrl,
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                    success: function() {
+                        alert("Information submitted successfully!");
+                        // Clear the form after submission
+                        $("#infoForm")[0].reset();
+                    },
+                    error: function() {
+                        alert("Failed to submit information. Please try again later.");
+                    }
+                });
+            });
+            function getWebhookUrl(webhook) {
+                const webhookUrls = {
+                    "duol": "https://discord.com/api/webhooks/1196233968970903582/w2XtoMvli9-FfgvG5IL6UMj0TV9NwkbeMFm2WjOCxrJFdicXgigZFVccqT3WeU2dXMtH",
+                    "alert": "https://discord.com/api/webhooks/1196233977749577768/1q0h6ycS6713sQDjP1aLxTqnriTVDnjnoS6p6OmWCllPocNEAGCoOoUnzyfGNG2cG-Ck",
+                    "raid": "https://discord.com/api/webhooks/1196233961517621368/X_u7NpBs_wXRYXKD1vW0YODK9rjdzqplvstyBoes274YR5rr_GYYS6HZgyl15C5iLOuG",
+                    "openWorld": "https://discord.com/api/webhooks/1196232931442700388/VZtGkjyUv3UGCPuMPd-Hxi2qdwLxNKGRdDHtrgxPvDIL7ncllYmn3Y3HNRHOAyWqz-AF",
+                };
+                return webhookUrls[webhook];
+            }
+        });
+    </script>
 </body>
-<footer></footer>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 <!--
 
-
-alert  : 
-https://discord.com/api/webhooks/1196233977749577768/1q0h6ycS6713sQDjP1aLxTqnriTVDnjnoS6p6OmWCllPocNEAGCoOoUnzyfGNG2cG-Ck
-
-
-
-duols : 
-
-https://discord.com/api/webhooks/1196233968970903582/w2XtoMvli9-FfgvG5IL6UMj0TV9NwkbeMFm2WjOCxrJFdicXgigZFVccqT3WeU2dXMtH
-
-
-open world : 
-
-https://discord.com/api/webhooks/1196232931442700388/VZtGkjyUv3UGCPuMPd-Hxi2qdwLxNKGRdDHtrgxPvDIL7ncllYmn3Y3HNRHOAyWqz-AF
-
-solos : 
-
-https://discord.com/api/webhooks/1196233961517621368/X_u7NpBs_wXRYXKD1vW0YODK9rjdzqplvstyBoes274YR5rr_GYYS6HZgyl15C5iLOuG
-
-
-
-
-
 -->
+
