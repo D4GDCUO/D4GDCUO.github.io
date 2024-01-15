@@ -38,7 +38,7 @@
                 const webhookUrl = getWebhookUrl(webhook);
  
                 const data = {
-                    "content": `**Toon Name:** ${toonName}\n **Feat Name:** ${featName}\n **Run:** ${webhook}`
+                    "content": `**Toon Name:** ${toonName}\n **Feat Name:** ${featName}\n`
                 };
                 $.ajax({
                     type: "POST",
