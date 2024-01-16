@@ -15,7 +15,7 @@
 <!-- Destiend 4 Greateness-->
 <!--Hex Info-->
     <div class="contact-card">
-        <img src="photos/hex.jpeg" alt="skull.jpg">
+        <img src="photos/hex.jpg" alt="skull.jpg">
         <div class="contact-details">
             <h2>Mrs Hex</h2>
             <p>League Leader</p>
@@ -37,7 +37,7 @@
 </div>
  
 <!-- Third Accordion - Skill Points -->
-<button class="accordion">Skill Points</button>
+<button class="accordion">Skill Points Guide</button>
 <div class="panel">
   <p>Content for Skill Points goes here...</p>
 </div>
@@ -51,9 +51,68 @@
 <!-- Fifth Accordion - Feat Request -->
 <button class="accordion">Feat Request</button>
 <div class="panel">
-  <p>Content for Feat Request goes here...</p>
+
+  <form id="infoForm">
+    <label for="toonName">Toon Name</label>
+    <input type="text" id="toonName" name="toonName" required><br><br>
+
+    <label for="featName">Feat Name</label>
+    <input type="text" id="featName" name="featName" required><br><br>
+
+    <label for="dlc">DLC</label>
+    <input type="dlc" id="dlc" name="dlc" required><br><br>
+
+    <label for="webhook">Runs</label>
+    <select id="webhook" name="webhook" required>
+        <option value="duos">Duos</option>
+        <option value="alerts">Alert</option>
+        <option value="raids">Raids</option>
+        <option value="openWorld">Open World</option>
+    </select><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    $(document).ready(function() {
+        $("#infoForm").submit(function(event) {
+            event.preventDefault();
+
+            const toonName = $("#toonName").val();
+            const featName = $("#featName").val();
+            const dlc = $("#dlc").val();
+            const webhook = $("#webhook").val();
+            const webhookUrl = getWebhookUrl(webhook);
+
+            const data = {
+                "content": `**Who:** ${toonName}\n **Feat Name** ${featName}\n **DLC:** ${dlc}\n **Type of Run:** ${webhook}`
+            };
+            $.ajax({
+                type: "POST",
+                url: webhookUrl,
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function() {
+                    alert("Information submitted successfully!");
+                    // Clear the form after submission
+                    $("#infoForm")[0].reset();
+                },
+                error: function() {
+                    alert("Failed to submit information. Please try again later.");
+                }
+            });
+        });
+        function getWebhookUrl(webhook) {
+            const webhookUrls = {
+                "duos": "",
+                "alerts": "",
+                "raids": "",
+                "openWorld": "",
+            };
+            return webhookUrls[webhook];
+        }
+    });
+</script>
 </div>
- 
 <script>
 // JavaScript code to toggle the accordion
 var accordions = document.getElementsByClassName("accordion");
@@ -69,8 +128,6 @@ for (var i = 0; i < accordions.length; i++) {
   });
 }
 </script>
-
-
 <!-- Footer-->
 <div class="footer">
   <p>&copy; 2024 Destined 4 Greatness  by Jox All rights reserved.</p>
