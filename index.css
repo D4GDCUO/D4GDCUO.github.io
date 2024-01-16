@@ -1,236 +1,138 @@
+
     /* Add additional styles here if needed */
     .contact-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        background-color: #f2f2f2;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin: 20px;
-    }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+  }
 
-    .contact-card img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 20px;
-    }
+  .contact-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+  }
 
-    .contact-card h2 {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
-    }
+  .contact-card h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+  }
 
-    .contact-card p {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 5px;
-    }
+  .contact-card p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 5px;
+  }
 
-    .contact-card .discord-username {
-        font-weight: bold;
-        color: #00bfff;
-    }
+  .contact-card .discord-username {
+      font-weight: bold;
+      color: #00bfff;
+  }
 
 
 
-    
+  
 /*  D4G */
 body, html {
-    height: 100%;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .bg-image {
-    /* The image used */
-    background-image: url("dcuo.jpg");
-  
-    /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-  
-    /* Full height */
-    height: 100%;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  /* Position text in the middle of the page/image */
-  .bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
-  }
- /*  D4G */
+  height: 100%;
+}
 
+* {
+  box-sizing: border-box;
+}
 
+.bg-image {
+  /* The image used */
+  background-image: url("photos/dcuo.jpg");
 
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+/*  D4G  END*/
 
 
 /* Style the accordion container */
 .accordion {
-    display: flex;
-  }
-   
-  /* Style the accordion item */
-  .accordion-item {
-    flex: 1;
-    margin-right: 10px;
-  }
-   
-  /* Style the accordion header */
-  .accordion-header {
-    background-color: #f1f1f1;
-    color: #333;
-    padding: 10px;
-    cursor: pointer;
-  }
-   
-  /* Style the accordion content */
-  .accordion-content {
-    padding: 10px;
-    display: none;
-  }
-   
-  /* Add a different background color to the active accordion header */
-  .active {
-    background-color: #ddd;
-  }
+  background-color: #f7f7f7;
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  transition: 0.4s;
+}
+ 
+/* Style the accordion content */
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+ 
+/* Change the color of the accordion when it is active/open */
+.active {
+  background-color: #ddd;
+}
+ 
+/* Add a "caret" icon for the accordion */
+.accordion::after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+ 
+/* Rotate the "caret" icon when the accordion is active/open */
+.active::after {
+  content: "\2212";
+}
 
 
 
 
-/* Responsive styles */
-@media screen and (min-width: 768px) {
-    .accordion-item {
-      flex-basis: calc(50% - 10px);
-      margin-right: 10px;
-      margin-bottom: 0;
-    }
-  }
-  
-  @media screen and (min-width: 992px) {
-    .accordion-item {
-      flex-basis: calc(33.3333% - 10px);
-    }
-  }
-
-
-
-
-/*Form */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Set font and background color */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  
-  /* Center the form */
-  form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style form labels */
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Style form inputs */
-  input[type="text"],
-  input[type="email"],
-  select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    transition: border-color 0.3s ease-in-out;
-  }
-  
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  select:focus {
-    border-color: #007bff;
-  }
-  
-  /* Style form submit button */
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive styles */
-  @media screen and (min-width: 768px) {
-    .accordion-item {
-      flex-basis: calc(50% - 10px);
-      margin-right: 10px;
-      margin-bottom: 0;
-    }
-  }
-  
-  @media screen and (min-width: 992px) {
-    .accordion-item {
-      flex-basis: calc(33.3333% - 10px);
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
- /* Footer styles */
+/* Footer styles */
 .footer {
-    background-color: #f9f9f9;
-    padding: 20px;
-    text-align: center;
-  }
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+}
+

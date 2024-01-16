@@ -13,10 +13,9 @@
   <h1>Destiend 4 Greateness</h1>
 </div>
 <!-- Destiend 4 Greateness-->
-
 <!--Hex Info-->
     <div class="contact-card">
-        <img src="hex.jpeg" alt="skull.jpg">
+        <img src="photos/hex.jpeg" alt="skull.jpg">
         <div class="contact-details">
             <h2>Mrs Hex</h2>
             <p>League Leader</p>
@@ -25,100 +24,52 @@
     </div>
 <!--Hex Info end-->
 
-
-<!--Accordions info-->
-<div class="accordion">
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(1)">Rules</div>
-    <div class="accordion-content">Rules goes here</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(2)">League MOTD</div>
-    <div class="accordion-content">League MOTD goes here</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(3)">Skill points Guide </div>
-    <div class="accordion-content">Skill points Guide goes</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(4)">Artifacts guide </div>
-    <div class="accordion-content">Artifacts guide goes here</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header" onclick="toggleAccordion(5)">Submit a feat request</div>
-    <div class="accordion-content">
-      <form id="infoForm">
-        <label for="toonName">Toon Name</label>
-        <input type="text" id="toonName" name="toonName" required><br><br>
+<!-- First Accordion - Rules -->
+<button class="accordion">Rules</button>
+<div class="panel">
+  <p>Content for Rules goes here...</p>
+</div>
  
-        <label for="featName">Feat Name</label>
-        <input type="text" id="featName" name="featName" required><br><br>
+<!-- Second Accordion - MOTD -->
+<button class="accordion">MOTD</button>
+<div class="panel">
+  <p>Content for MOTD goes here...</p>
+</div>
  
+<!-- Third Accordion - Skill Points -->
+<button class="accordion">Skill Points</button>
+<div class="panel">
+  <p>Content for Skill Points goes here...</p>
+</div>
  
+<!-- Fourth Accordion - Artifacts Guide -->
+<button class="accordion">Artifacts Guide</button>
+<div class="panel">
+  <p>Content for Artifacts Guide goes here...</p>
+</div>
  
-        <label for="webhook">Choose Run Type</label>
-        <select id="webhook" name="webhook" required>
-            <option value="duol">Duol</option>
-            <option value="alert">Alert</option>
-            <option value="raid">Raid</option>
-            <option value="openWorld">Open World</option>
-        </select><br><br>
-        <input type="submit" value="Submit">
-    </form>
- 
-    <script>
-        $(document).ready(function() {
-            $("#infoForm").submit(function(event) {
-                event.preventDefault();
- 
-                const toonName = $("#toonName").val();
-                const featName = $("#featName").val();
-                const webhook = $("#webhook").val();
-                const webhookUrl = getWebhookUrl(webhook);
- 
-                const data = {
-                    "content": `**Toon Name:** ${toonName}\n **Feat Name:** ${featName}\n`
-                };
-                $.ajax({
-                    type: "POST",
-                    url: webhookUrl,
-                    data: JSON.stringify(data),
-                    contentType: "application/json",
-                    success: function() {
-                        alert("Information submitted successfully!");
-                        // Clear the form after submission
-                        $("#infoForm")[0].reset();
-                    },
-                    error: function() {
-                        alert("Failed to submit information. Please try again later.");
-                    }
-                });
-            });
-            function getWebhookUrl(webhook) {
-                const webhookUrls = {
-                    "duol": "https://discord.com/api/webhooks/1196233968970903582/w2XtoMvli9-FfgvG5IL6UMj0TV9NwkbeMFm2WjOCxrJFdicXgigZFVccqT3WeU2dXMtH",
-                    "alert": "https://discord.com/api/webhooks/1196233977749577768/1q0h6ycS6713sQDjP1aLxTqnriTVDnjnoS6p6OmWCllPocNEAGCoOoUnzyfGNG2cG-Ck",
-                    "raid": "https://discord.com/api/webhooks/1196233961517621368/X_u7NpBs_wXRYXKD1vW0YODK9rjdzqplvstyBoes274YR5rr_GYYS6HZgyl15C5iLOuG",
-                    "openWorld": "https://discord.com/api/webhooks/1196232931442700388/VZtGkjyUv3UGCPuMPd-Hxi2qdwLxNKGRdDHtrgxPvDIL7ncllYmn3Y3HNRHOAyWqz-AF",
-                };
-                return webhookUrls[webhook];
-            }
-        });
-    </script>
-    </div>
-  </div>
+<!-- Fifth Accordion - Feat Request -->
+<button class="accordion">Feat Request</button>
+<div class="panel">
+  <p>Content for Feat Request goes here...</p>
 </div>
  
 <script>
-// Function to toggle the accordion content
-function toggleAccordion(index) {
-  var accordionItem = document.getElementsByClassName("accordion-item")[index - 1];
-  accordionItem.classList.toggle("active");
-  var accordionContent = accordionItem.getElementsByClassName("accordion-content")[0];
-  accordionContent.style.display = accordionContent.style.display === "block" ? "none" : "block";
+// JavaScript code to toggle the accordion
+var accordions = document.getElementsByClassName("accordion");
+for (var i = 0; i < accordions.length; i++) {
+  accordions[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
 }
 </script>
-<!--Accordions info End-->
+
 
 <!-- Footer-->
 <div class="footer">
@@ -127,10 +78,3 @@ function toggleAccordion(index) {
 <!-- Footer-->
 </body>
 </html>
-
-
-<!--Need to do : 
-
-
--->
- 
