@@ -78,7 +78,7 @@ for (var i = 0; i < accordions.length; i++) {
 
   <label for="webhook">Type of Run</label>
   <select id="webhook" name="webhook" required>
-      <option value="duol">Duol </option>
+      <option value="duos">Duos </option>
       <option value="alert">Alert</option>
       <option value="raid">Raid</option>
       <option value="openWorld">Open World</option>
@@ -117,10 +117,10 @@ for (var i = 0; i < accordions.length; i++) {
       });
       function getWebhookUrl(webhook) {
           const webhookUrls = {
-              "duol": "",
-              "alert": "",
-              "raid": "",
-              "openWorld": "",
+              "duos": "https://discord.com/api/webhooks/1196641322262597692/4K6cnvPWakAyzumUgOi59DWbzxgHYASntOgnONp2emNXMgy9MyiIGLNNEIZ9coCWsAzE",
+              "alert": "https://discord.com/api/webhooks/1196641795954704394/KU97LPKFyKlLyi-C4MpfOs1kRFICMRMA38AwqBhY4oN_e8OSuvOIdcsnkBGYnxGlP3yQ",
+              "raid": "https://discord.com/api/webhooks/1196641881577226310/1C3qr9o3NFHdDPXSE0KEmlYPc9v3lyy9NUdyIr1yBTtnmeYd-nwaRSGCJR6AT7xrqmkb",
+              "openWorld": "https://discord.com/api/webhooks/1196641979669426236/d7G19btJuQG4ldiO2K5ANtKG7zBBkhygnBzZ8nmWoxXrzJ6ZhlRfdVKKel23bdq_QOFL",
           };
           return webhookUrls[webhook];
       }
